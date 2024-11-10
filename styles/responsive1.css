@@ -1,0 +1,293 @@
+/* responsive.css */
+
+/* Breakpoint para dispositivos móviles pequeños */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.75rem;
+    }
+
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .container {
+        margin: 1rem auto;
+        padding: 0 0.75rem;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .welcome-text {
+        font-size: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 0.75rem;
+    }
+
+    .form-container {
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .design-areas {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0.5rem;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 2% auto;
+        padding: 1rem;
+    }
+}
+
+/* Breakpoint para tablets y móviles grandes */
+@media (min-width: 481px) and (max-width: 768px) {
+    .navbar {
+        padding: 1rem 2rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    .container {
+        margin: 1.5rem auto;
+        padding: 0 1rem;
+    }
+
+    .design-areas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .modal-content {
+        width: 90%;
+        margin: 5% auto;
+    }
+
+    .work-options {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+/* Breakpoint para tablets grandes y laptops pequeñas */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+    }
+
+    .design-areas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #jobDetailsPage .flex {
+        flex-direction: column;
+    }
+
+    #jobDetailsPage .w-64 {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--gray-200);
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .grid.md\:grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+/* Estilos específicos para la página de detalles del trabajo */
+@media (max-width: 1024px) {
+    #jobDetailsPage {
+        padding: 1rem;
+    }
+
+    #jobDetailsPage .sidebar {
+        position: static;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .profile-card, .job-details-card {
+        margin-bottom: 1rem;
+    }
+
+    .tabs-container {
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0.5rem;
+    }
+
+    .profile-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+}
+
+/* Ajustes para elementos específicos */
+@media (max-width: 768px) {
+    /* Ajustes para el formulario */
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        padding: 0.5rem;
+        font-size: 16px; /* Previene zoom en iOS */
+    }
+
+    /* Ajustes para el modal */
+    .modal {
+        padding: 0 1rem;
+    }
+
+    .modal-content {
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .close {
+        font-size: 24px;
+        padding: 0.5rem;
+    }
+
+    /* Ajustes para las tarjetas de perfil y trabajo */
+    .profile-card,
+    .job-details-card {
+        padding: 1rem;
+    }
+
+    .skills-container {
+        gap: 0.5rem;
+    }
+
+    .skill-tag {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 1025px) {
+    .container {
+        max-width: 1200px;
+    }
+
+    .modal-content {
+        max-width: 800px;
+    }
+
+    .design-areas {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    #jobDetailsPage .flex {
+        gap: 2rem;
+    }
+}
+
+/* Ajustes de accesibilidad y táctiles */
+@media (hover: none) {
+    /* Estilos para dispositivos táctiles */
+    .btn:hover {
+        transform: none;
+    }
+
+    .design-area {
+        padding: 1rem 0.5rem;
+    }
+
+    .nav-links a {
+        padding: 0.5rem;
+    }
+}
+
+/* Soporte para modo oscuro */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #1a1a1a;
+        --text-primary: #ffffff;
+    }
+
+    .navbar,
+    .modal-content,
+    .form-container,
+    .profile-card,
+    .job-details-card {
+        background: #2d2d2d;
+    }
+
+    .design-area {
+        background: #3d3d3d;
+        border-color: #4d4d4d;
+    }
+
+    input, textarea, select {
+        background: #3d3d3d;
+        border-color: #4d4d4d;
+        color: #ffffff;
+    }
+}
+
+/* Ajustes de impresión */
+@media print {
+    .navbar,
+    .btn,
+    .modal,
+    .form-container {
+        display: none !important;
+    }
+
+    .container {
+        margin: 0;
+        padding: 0;
+    }
+
+    #jobDetailsPage {
+        display: block !important;
+    }
+}
+
+/* Ajustes de alto contraste */
+@media (forced-colors: active) {
+    .btn,
+    .design-area.selected,
+    .skill-tag {
+        border: 1px solid ButtonText;
+    }
+}
+
+/* Ajustes para dispositivos con pantallas más grandes */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+    }
+
+    .grid.md\:grid-cols-2 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Ajustes para animaciones reducidas */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
